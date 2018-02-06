@@ -19,5 +19,16 @@ public class PatientTest {
 		
 	}
 	
+//	@Test
+//	public void shouldBeAbletoAddHealth() {
+//		Patient patient = new Patient(); 
+//		
+//		patient.get
+//		
+//		
+//	}
+	
+	
+	
 	
 }

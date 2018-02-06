@@ -8,7 +8,7 @@ import hospital.Doctor;
 public class DoctorTest {
 	@Test
 	public void shouldDrawBlood() {
-		Doctor underTest = new Doctor();
+		Doctor underTest = new Doctor(null, null, null);
 		Patient patient = new Patient(); 
 		
 		int bloodsBefore = patient.getBloods();
@@ -30,7 +30,7 @@ public class DoctorTest {
 	
 	@Test
 	public void shouldDrawBloodFromTestDouble() {
-		Doctor underTest = new Doctor();
+		Doctor underTest = new Doctor(null, null, null);
 		Bleedable patient = new BleedableDouble(); 
 		
 		underTest.drawBlood(patient);
@@ -40,7 +40,7 @@ public class DoctorTest {
 	
 	@Test
 	public void shouldHaveSalary() {
-		Employee underTest = new Doctor(); 
+		Employee underTest = new Doctor(null, null, null); 
 		
 		int salary = underTest.getSalary(); 
 		
@@ -49,15 +49,28 @@ public class DoctorTest {
 	
 	@Test
 	public void patientDrawBloodAsAnInterface() {
-		BloodDrawer underTest = new Doctor(); 
+		BloodDrawer underTest = new Doctor(null, null, null); 
 		Bleedable patient = new Patient();
 		
 		underTest.drawBlood(patient); 
-		
-		
-		
-		
 	}
+	
+	@Test
+	public void assertCareForPatient() {
+		Doctor underTest = new Doctor("1111","Dad","Primary");
+		Patient patient = new Patient(); 
+		
+		int checkBefore = patient.getHealth();
+		underTest.adminsterCare(patient); 
+		int checkAfter = patient.getHealth();
+				
+		assertThat(checkAfter-checkBefore, is(10));
+	}
+	
+	
+	
+	
+	
 	
 	
 }
