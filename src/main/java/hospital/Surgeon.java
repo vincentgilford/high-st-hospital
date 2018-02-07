@@ -15,7 +15,11 @@ public class Surgeon extends Doctor {
 		return isOperating;
 	}
 
+	@Override
+	public int getSalary() {
+		return 120000;
 		
+	}
 	
 
 }
