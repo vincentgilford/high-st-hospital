@@ -8,7 +8,7 @@ public class ReceptionistTest {
 	
 	@Test
 	public void assertIsOnThePhone() {
-		Receptionist underTest = new Receptionist(null, null, true);
+		PhoneType underTest = new Receptionist(null, null, true);
 		
 		underTest.isOnThePhone();
 		boolean check = true;
@@ -25,8 +25,6 @@ public class ReceptionistTest {
 		
 		
 		assertThat(45000, is(underTest.getSalary()));
-		
-
 	}
 	
 }
